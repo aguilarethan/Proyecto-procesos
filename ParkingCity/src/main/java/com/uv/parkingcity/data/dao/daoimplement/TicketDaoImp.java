@@ -39,7 +39,7 @@ public class TicketDaoImp implements TicketDao {
     @Override
     public ArrayList<Ticket> getAllTicketsByEntryDate(LocalDate entryDate) throws SQLException {
         ArrayList<Ticket> tickets = new ArrayList<>();
-        String query = "SELECT * FROM Tickets WHERE Estado = ?";
+        String query = "SELECT * FROM Ticket WHERE FechaEntrada = ?";
 
         Connection connection = database.getConnection();
         PreparedStatement getTicketsStatement = connection.prepareStatement(query);
@@ -68,6 +68,40 @@ public class TicketDaoImp implements TicketDao {
         connection.close();
 
         return tickets;
+    }
+
+    @Override
+    public Ticket getTicketByParkingSpaceId(int id) throws SQLException {
+        String query = "SELECT * FROM Ticket WHERE CajonEstacionamientoID = ? AND Estado = 'SIN_PAGAR'";
+        Ticket ticket = new Ticket();
+
+        Connection connection = database.getConnection();
+        PreparedStatement getTicketStatement = connection.prepareStatement(query);
+        getTicketStatement.setInt(1, id);
+        ResultSet resultSet = getTicketStatement.executeQuery();
+
+        while (resultSet.next()) {
+            int ticketId = resultSet.getInt("TicketID");
+            LocalTime entryTime = resultSet.getTime("HoraEntrada").toLocalTime();
+            LocalDate recoverEntryDate = resultSet.getDate("FechaEntrada").toLocalDate();
+            LocalDate departureDate = resultSet.getDate("FechaSalida").toLocalDate();
+            LocalTime departureTime = resultSet.getTime("HoraSalida").toLocalTime();
+            TicketStatus status = TicketStatus.valueOf(resultSet.getString("Estado"));
+            int parkingSpaceId = resultSet.getInt("CajonEstacionamientoID");
+
+            ParkingSpaceDaoImp parkingSpaceDaoImp = new ParkingSpaceDaoImp();
+            ParkingSpace parkingSpace = parkingSpaceDaoImp.getParkingSpaceById(parkingSpaceId);
+
+            ticket = new Ticket(ticketId, entryTime, recoverEntryDate, departureDate, departureTime, status, parkingSpace);
+
+
+        }
+
+        resultSet.close();
+        getTicketStatement.close();
+        connection.close();
+
+        return ticket;
     }
 
 
