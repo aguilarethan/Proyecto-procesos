@@ -32,11 +32,11 @@ public class PrincipalController implements Initializable {
         setView("/com/uv/parkingcity/view/ParkingSpacesAvailableWindow.fxml");
 
         btn_ParkingSpacesAvailable.setOnAction(event -> {
-
+            setView("/com/uv/parkingcity/view/ParkingSpacesAvailableWindow.fxml");
         });
 
         btn_PayTicket.setOnAction(event -> {
-
+            setView("/com/uv/parkingcity/view/PayTicketWindow.fxml");
         });
 
         btn_AllTickets.setOnAction(event -> {

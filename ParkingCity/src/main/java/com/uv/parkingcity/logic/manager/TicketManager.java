@@ -15,8 +15,12 @@ public class TicketManager {
         return ticketDaoImp.addTicket(ticket);
     }
 
-    ArrayList<Ticket> getAllTicketsByEntryDate(LocalDate entryDate) throws SQLException {
+    public ArrayList<Ticket> getAllTicketsByEntryDate(LocalDate entryDate) throws SQLException {
         return ticketDaoImp.getAllTicketsByEntryDate(entryDate);
+    }
+
+    public Ticket getTicketByParkingSpaceId(int id) throws SQLException {
+        return ticketDaoImp.getTicketByParkingSpaceId(id);
     }
 
 }
