@@ -1,0 +1,38 @@
+*{
+    -fx-primary-color: #BB86FC;
+    -fx-grey-color: #1e1e1e;
+}
+
+.radio-button{
+    -fx-pref-height: 45;
+    -fx-font-family: "Yu Gothic";
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-background-color: transparent;
+}
+
+.radio-button: hover{
+    -fx-background-color: -fx-grey-color;
+}
+
+.radio-button: selected {
+    -fx-background-color: -fx-primary-color;
+}
+
+.radio-button .radio{
+    -fx-min-width: 5;
+    -fx-max-width: 5;
+    -fx-pref-width: 5;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+}
+
+
+.radio-button:selected .radio{
+    -fx-border-color: transparent;
+}
+
+.radio-button: selected .dot{
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}

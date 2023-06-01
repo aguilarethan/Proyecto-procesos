@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<AnchorPane prefHeight="620.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uv.parkingcity.view.PrincipalController">
+   <children>
+      <BorderPane fx:id="pane_Principal" prefHeight="620.0" prefWidth="1000.0" style="-fx-background-color: #1e1e1e;">
+         <left>
+            <AnchorPane prefHeight="200.0" prefWidth="226.0" style="-fx-background-color: #060606;" BorderPane.alignment="CENTER">
+               <children>
+                  <RadioButton fx:id="btn_ParkingSpacesAvailable" alignment="CENTER_LEFT" layoutX="48.0" layoutY="233.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="130.0" selected="true" stylesheets="@../styles/MenuButtons.css" text="Lugares disponibles">
+                     <styleClass>
+                        <String fx:value="radio" />
+                        <String fx:value="radio-button" />
+                     </styleClass>
+                  </RadioButton>
+                  <RadioButton fx:id="btn_PayTicket" layoutX="48.0" layoutY="279.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="130.0" stylesheets="@../styles/MenuButtons.css" text="Pagar ticket" />
+                  <RadioButton fx:id="btn_AllTickets" layoutX="48.0" layoutY="325.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="130.0" stylesheets="@../styles/MenuButtons.css" text="Tickets" />
+               </children>
+            </AnchorPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>
