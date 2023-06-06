@@ -1,0 +1,26 @@
+.scroll-pane > .viewport{
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar{
+    -fx-background-color: transparent;
+
+}
+
+.scroll-bar .thumb{
+    -fx-background-color: #6b6b6b;
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+.scroll-bar .thumb:hover{
+    -fx-background-color: white;
+}
+
+.scroll-bar .thumb{
+    -fx-background-color: #d9d9d9;
+}

@@ -37,6 +37,7 @@ public class ParkingSpacesAvailableController implements Initializable {
     public Label lbl_EntryDate;
     public Label lbl_EntryTime;
     public Label lbl_TicketStatus;
+    public Label lbl_ParkingSpace;
 
     ParkingSpaceManager parkingSpaceManager = new ParkingSpaceManager();
     TicketManager ticketManager = new TicketManager();
@@ -164,6 +165,7 @@ public class ParkingSpacesAvailableController implements Initializable {
             lbl_EntryDate.setText("Fecha de entrada: " + String.valueOf(ticket.getEntryDate()));
             lbl_EntryTime.setText("Hora de entrada: " + String.valueOf(ticket.getEntryTime()));
             lbl_TicketStatus.setText("Estado: " + String.valueOf(ticket.getTicketStatus()).replace("_", " "));
+            lbl_ParkingSpace.setText("Lugar de estacionamiento: " + ticket.getParkingSpace().getParkingSpaceId());
             pane_Ticket.setVisible(true);
         } catch (SQLException e) {
             showAlertTicket();

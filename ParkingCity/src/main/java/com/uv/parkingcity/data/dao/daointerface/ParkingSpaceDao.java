@@ -11,4 +11,5 @@ public interface ParkingSpaceDao {
     int updateParkingSpaceStatus(ParkingSpace parkingSpace) throws SQLException;
     ParkingSpace getParkingSpaceById (int parkingSpaceId) throws SQLException;
 
+
 }

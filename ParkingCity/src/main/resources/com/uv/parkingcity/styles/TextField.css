@@ -1,0 +1,30 @@
+.text-field{
+    -fx-pref-height: 30;
+}
+.normal-text-field{
+
+    -fx-text-fill: white;
+    -fx-background-color: #1e1e1e;
+    -fx-background-radius: 10;
+
+}
+
+.normal-text-field: focused {
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+
+
+}
+
+.border-text-field{
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-border-color: white;
+    -fx-border-radius: 10;
+}
+
+.border-text-field: focused{
+    -fx-border-color: #bb86fc;
+
+}

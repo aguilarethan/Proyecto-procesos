@@ -17,4 +17,7 @@ public class ParkingSpaceManager {
         return parkingSpaceDaoImp.updateParkingSpaceStatus(parkingSpace);
     }
 
+    public ParkingSpace getParkingSpaceById(int id) throws SQLException {
+        return parkingSpaceDaoImp.getParkingSpaceById(id);
+    }
 }

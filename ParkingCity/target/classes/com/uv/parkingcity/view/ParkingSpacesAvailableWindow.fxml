@@ -52,27 +52,32 @@
                         <Font name="Yu Gothic Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl_EntryDate" layoutX="15.0" layoutY="34.0" prefHeight="18.0" prefWidth="200.0" text="Fecha de entrada" textFill="WHITE">
+                  <Label fx:id="lbl_EntryDate" layoutX="15.0" layoutY="27.0" prefHeight="18.0" prefWidth="200.0" text="Fecha de entrada" textFill="WHITE">
                      <font>
                         <Font name="Yu Gothic Regular" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl_EntryTime" layoutX="15.0" layoutY="52.0" prefHeight="18.0" prefWidth="200.0" text="Hora de entrada" textFill="WHITE">
+                  <Label fx:id="lbl_EntryTime" layoutX="15.0" layoutY="45.0" prefHeight="18.0" prefWidth="200.0" text="Hora de entrada" textFill="WHITE">
                      <font>
                         <Font name="Yu Gothic Regular" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl_TicketStatus" layoutX="15.0" layoutY="117.0" prefHeight="18.0" prefWidth="200.0" text="Estado" textFill="WHITE">
+                  <Label fx:id="lbl_TicketStatus" layoutX="15.0" layoutY="110.0" prefHeight="18.0" prefWidth="200.0" text="Estado" textFill="WHITE">
                      <font>
                         <Font name="Yu Gothic Regular" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="93.0" prefHeight="18.0" prefWidth="200.0" text="Hora de salida:" textFill="WHITE">
+                  <Label layoutX="15.0" layoutY="86.0" prefHeight="18.0" prefWidth="200.0" text="Hora de salida:" textFill="WHITE">
                      <font>
                         <Font name="Yu Gothic Regular" size="12.0" />
                      </font>
                   </Label>
-                  <Label layoutX="15.0" layoutY="75.0" prefHeight="18.0" prefWidth="200.0" text="Fecha de salida:" textFill="WHITE">
+                  <Label layoutX="15.0" layoutY="68.0" prefHeight="18.0" prefWidth="200.0" text="Fecha de salida:" textFill="WHITE">
+                     <font>
+                        <Font name="Yu Gothic Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_ParkingSpace" layoutX="15.0" layoutY="127.0" prefHeight="18.0" prefWidth="200.0" text="Cajon de estacionamiento:" textFill="WHITE">
                      <font>
                         <Font name="Yu Gothic Regular" size="12.0" />
                      </font>

@@ -23,4 +23,8 @@ public class TicketManager {
         return ticketDaoImp.getTicketByParkingSpaceId(id);
     }
 
+    public int updateTicketStatus(Ticket ticket) throws SQLException {
+        return ticketDaoImp.updateTicketStatus(ticket);
+    }
+
 }

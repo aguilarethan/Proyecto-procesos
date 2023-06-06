@@ -59,7 +59,7 @@ public class TicketDaoImp implements TicketDao {
             ParkingSpace parkingSpace = parkingSpaceDaoImp.getParkingSpaceById(parkingSpaceId);
 
             Ticket ticket = new Ticket(ticketId, entryTime, recoverEntryDate, departureDate, departureTime, status, parkingSpace);
-
+            tickets.add(ticket);
 
         }
 
@@ -84,16 +84,17 @@ public class TicketDaoImp implements TicketDao {
             int ticketId = resultSet.getInt("TicketID");
             LocalTime entryTime = resultSet.getTime("HoraEntrada").toLocalTime();
             LocalDate recoverEntryDate = resultSet.getDate("FechaEntrada").toLocalDate();
-            LocalDate departureDate = resultSet.getDate("FechaSalida").toLocalDate();
-            LocalTime departureTime = resultSet.getTime("HoraSalida").toLocalTime();
             TicketStatus status = TicketStatus.valueOf(resultSet.getString("Estado"));
             int parkingSpaceId = resultSet.getInt("CajonEstacionamientoID");
 
             ParkingSpaceDaoImp parkingSpaceDaoImp = new ParkingSpaceDaoImp();
             ParkingSpace parkingSpace = parkingSpaceDaoImp.getParkingSpaceById(parkingSpaceId);
 
-            ticket = new Ticket(ticketId, entryTime, recoverEntryDate, departureDate, departureTime, status, parkingSpace);
-
+            ticket.setTicketId(ticketId);
+            ticket.setEntryTime(entryTime);
+            ticket.setEntryDate(recoverEntryDate);
+            ticket.setTicketStatus(status);
+            ticket.setParkingSpace(parkingSpace);
 
         }
 
@@ -102,6 +103,25 @@ public class TicketDaoImp implements TicketDao {
         connection.close();
 
         return ticket;
+    }
+
+    @Override
+    public int updateTicketStatus(Ticket ticket) throws SQLException {
+        int result = 0;
+        String query = "UPDATE Ticket SET FechaSalida = ?, HoraSalida = ?, Estado = ? WHERE TicketID = ?";
+
+        Connection connection = database.getConnection();
+        PreparedStatement updateTicketStatement = connection.prepareStatement(query);
+
+        updateTicketStatement.setString(1, String.valueOf(ticket.getDepartureDate()));
+        updateTicketStatement.setString(2, String.valueOf(ticket.getDepartureTime()));
+        updateTicketStatement.setString(3, ticket.getTicketStatus().toString());
+        updateTicketStatement.setInt(4, ticket.getTicketId());
+
+        result = updateTicketStatement.executeUpdate();
+        connection.close();
+
+        return result;
     }
 
 

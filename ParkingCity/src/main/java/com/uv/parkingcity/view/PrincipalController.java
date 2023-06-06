@@ -40,7 +40,7 @@ public class PrincipalController implements Initializable {
         });
 
         btn_AllTickets.setOnAction(event -> {
-
+            setView("/com/uv/parkingcity/view/TicketsWindow.fxml");
         });
     }
 

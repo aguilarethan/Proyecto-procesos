@@ -11,5 +11,6 @@ public interface TicketDao {
     int addTicket(Ticket ticket) throws SQLException;
     ArrayList<Ticket> getAllTicketsByEntryDate(LocalDate entryDate) throws SQLException;
     Ticket getTicketByParkingSpaceId (int id) throws SQLException;
+    int updateTicketStatus (Ticket ticket) throws SQLException;
 
 }

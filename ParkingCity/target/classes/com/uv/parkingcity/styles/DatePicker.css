@@ -1,0 +1,106 @@
+* {
+    -fx-primary-color: #bb86fc;
+    -fx-secondary-color: #C93535;
+    -fx-light-grey-color: #d1d1d1;
+
+}
+
+/* labels customize */
+.date-picker{
+    -fx-focus-color: transparent;
+    -fx-padding: 1 1 1 0;
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0,0,0);
+}
+
+.date-picker .text-field{
+    -fx-background-radius: 5 0 0 5;
+    -fx-font-weight: bold;
+    -fx-background-color: white;
+}
+
+.date-picker .text-field:hover{
+    -fx-cursor: default;
+}
+
+.date-picker .arrow-button{
+    -fx-background-color: -fx-primary-color;
+    -fx-background-radius: 5 5 5 5;
+    -fx-background-image: url("../images/IconCalendar.png");
+    -fx-background-size: 20 20;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+.date-picker .arrow-button: hover{
+    -fx-background-color: -fx-secondary-color;
+    -fx-cursor: hand;
+}
+
+.date-picker .arrow-button .arrow{
+    -fx-opacity: 0;
+    -fx-pref-width: 30px;
+}
+
+/* Popup picker customize */
+
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: -fx-primary-color;
+    -fx-background-radius: 100;
+}
+
+.date-picker-popup .month-year-pane .label{
+    -fx-text-fill: white;
+}
+
+.spinner .button{
+    -fx-background-color: transparent;
+}
+
+.left-arrow, .right-arrow{
+    -fx-background-color: white;
+}
+
+.date-picker .calendar-grid{
+    -fx-padding: 5;
+    -fx-background-color: transparent;
+}
+
+.day-name-cell{
+    -fx-font-weight: bold;
+    -fx-text-fill: #0e0e0e;
+}
+
+.cell{
+    -fx-pref-width: 30px;
+    -fx-pref-height: 30px;
+    -fx-text-fill: black;
+    -fx-background-radius: 100;
+    -fx-border-color: transparent;
+}
+
+.cell: hover{
+    -fx-background-color: -fx-light-grey-color;
+}
+
+.date-picker .cell:focused{
+    -fx-background-color: -fx-light-grey-color;
+    -fx-text-fill: red;
+}
+
+.date-picker .selected:focused {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: white;
+}
+
+.date-picker .selected {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: white;
+}
